@@ -13,6 +13,9 @@ class Application
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
+
+      # if @@items.include?(search_term)
+      #   resp.write "#{search_term} is"
       resp.write handle_search(search_term)
     else
       resp.write "Path Not Found"
