@@ -22,6 +22,7 @@ class Application
         @@cart.each do |new_item|
           resp.write "#{new_item}\n"
         end
+        binding.pry
       # end
       # else
       #   resp.write "Your cart is empty"
