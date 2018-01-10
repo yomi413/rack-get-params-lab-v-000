@@ -17,6 +17,7 @@ class Application
     elsif req.path.match(/cart/)
       @@cart.each do |new_item|
         resp.write "#{new_item}\n"
+      end
     else
       resp.write "Path Not Found"
     end
