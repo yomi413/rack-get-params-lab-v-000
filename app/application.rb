@@ -14,6 +14,9 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
 
+      if @@cart.include?(search_term)
+        resp.write "#{search_term} is one of our items"
+
       # if @@items.include?(search_term)
       #   resp.write "#{search_term} is"
       resp.write handle_search(search_term)
