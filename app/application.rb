@@ -11,12 +11,10 @@ class Application
       @@items.each do |item|
         resp.write "#{item}\n"
       end
+      
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
-
-      # if @@cart.empty?
-      #   resp.write "Your cart is empty"
 
     elsif req.path.match(/cart/)
       @@cart.each do |new_item|
@@ -25,6 +23,11 @@ class Application
       if @@cart.empty?
         resp.write "Your cart is empty"
       end
+
+    elsif req.path.match(/add/)
+      add_item = req.params["q"]
+      resp.write "added #{add_item}\n"
+      
 
       # end
       # else
