@@ -16,10 +16,13 @@ class Application
 
       if @@cart.include?(search_term)
         resp.write "#{search_term} is one of our items"
+      else
+        resp.write "Couldn't find #{search_term}"
+      end
 
       # if @@items.include?(search_term)
       #   resp.write "#{search_term} is"
-      resp.write handle_search(search_term)
+      # resp.write handle_search(search_term)
     else
       resp.write "Path Not Found"
     end
