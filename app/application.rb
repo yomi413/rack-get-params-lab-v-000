@@ -17,11 +17,12 @@ class Application
 
       if @@cart.empty?(search_term)
         resp.write "Your cart is empty"
-      
-    # elsif req.path.match(/cart/)
-    #   @@cart.each do |new_item|
-    #     resp.write "#{new_item}\n"
-    #   end
+
+      elsif req.path.match(/cart/)
+        @@cart.each do |new_item|
+          resp.write "#{new_item}\n"
+        end
+      end
       # else
       #   resp.write "Your cart is empty"
       # end
